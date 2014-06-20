@@ -1,0 +1,28 @@
+<h1>Lessons#index</h1>
+
+
+<table >
+<tr>
+  	<th>S.No.</th>
+    <th>Class Name</th>
+    <th>Description</th>
+    <th>Weekday</th>
+    <th>Ages</th>
+  </tr>
+
+<% i=1 %>
+<% @lessons.each do |lesson| %>
+<tr>
+      <td><%= i %></td>	
+      <td><%= lesson.name %></td>
+      <td><%= lesson.description %></td>
+      <td><%= lesson.weekday %></td>
+      <td><%= lesson.min_age %> to </td>
+      <td><%= lesson.max_age %></td>
+      <td><%= link_to 'Show', lesson_path(lesson) %></td>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+      <td><%= link_to 'Delete', lesson_path(lesson), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+</tr>
+<%i +=1 %>
+<% end %>
+</table>

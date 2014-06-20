@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson_id: MyString
+  name: MyString
+  description: MyText
+  weekday: MyString
+  start_time: 2014-06-18 21:25:15
+  end_time: 2014-06-18 21:25:15
+  min_age: 1
+  max_age: 1
+  institution_id: MyString
+  pre_requisite: MyText
+
+two:
+  lesson_id: MyString
+  name: MyString
+  description: MyText
+  weekday: MyString
+  start_time: 2014-06-18 21:25:15
+  end_time: 2014-06-18 21:25:15
+  min_age: 1
+  max_age: 1
+  institution_id: MyString
+  pre_requisite: MyText

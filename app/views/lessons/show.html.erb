@@ -1,0 +1,25 @@
+<h2> Details of selected class: </h2>
+
+<p>
+<strong> Class Name: </strong>
+<%= @lesson.name %>
+</p>
+
+<p>
+<strong> Description: </strong>
+<%= @lesson.description %>
+</p>
+
+<p>
+<strong> Weekday: </strong>
+<%= @lesson.weekday %>
+</p>
+
+<p>
+<strong> Ages: </strong>
+<%= @lesson.min_age%> to <%= @lesson.max_age%> years
+</p>
+
+<%= link_to 'Back', lessons_path %>
+<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+<%= link_to 'Delete', lesson_path(@lesson), method: :delete, data: {confirm: 'Are you sure ?'} %>
