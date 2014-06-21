@@ -11,7 +11,7 @@ class CreateLessons < ActiveRecord::Migration
       t.integer :max_age
       t.string :institution_id
       t.text :pre_requisite
-
+      t.references :institution, index: true
       t.timestamps
     end
   end

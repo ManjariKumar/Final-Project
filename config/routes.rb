@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :lessons
+  resources :institutions do
+    resources :lessons
+  end
   get 'lessons/index'
 
   get 'lessons/show'
