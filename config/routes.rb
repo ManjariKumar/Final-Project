@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-resources :lessons
+  devise_for :users
 
-resources :institutions
+  resources :lessons
 
-resources :institutions do
-    resources :lessons
-end
+  resources :institutions
+  resources :institutions do
+      resources :lessons
+  end
 
+  post 'signup' => 'devise/registrations#create', :as => :custom_user_registration
   get 'institutions/index'
 
   get 'institutions/show'
@@ -25,19 +27,19 @@ end
   
 
 
-  get 'lessons/index'
+  # get 'lessons/index'
 
-  get 'lessons/show'
+  # get 'lessons/show'
 
-  get 'lessons/new'
+  # get 'lessons/new'
 
-  get 'lessons/create'
+  # get 'lessons/create'
 
-  get 'lessons/edit'
+  # get 'lessons/edit'
 
-  get 'lessons/update'
+  # get 'lessons/update'
 
-  get 'lessons/destroy'
+  # get 'lessons/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
