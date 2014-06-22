@@ -1,8 +1,30 @@
 Rails.application.routes.draw do
 
-  resources :institutions do
+resources :lessons
+
+resources :institutions
+
+resources :institutions do
     resources :lessons
-  end
+end
+
+  get 'institutions/index'
+
+  get 'institutions/show'
+
+  get 'institutions/new'
+
+  get 'institutions/create'
+
+  get 'institutions/edit'
+
+  get 'institutions/update'
+
+  get 'institutions/destroy'
+
+  
+
+
   get 'lessons/index'
 
   get 'lessons/show'

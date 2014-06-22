@@ -1,0 +1,32 @@
+<h1>Institutions#index</h1>
+<p>Find me in app/views/institutions/index.html.erb</p>
+
+
+
+
+<table >
+<tr>
+  	<th>S.No.</th>
+    <th>Institution Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+
+<% i=1 %>
+<% @institutions.each do |biz| %>
+<tr>
+      <td><%= i %></td>	
+      <td><%= biz.inst_name %></td>
+      <td><%= biz.inst_add1%>, <%= biz.inst_add2%>, <%= biz.inst_city%>, <%= biz.inst_state%>, <%= biz.inst_zip%></td>
+      <td><%= biz.inst_phone %></td>
+      <td><%= biz.inst_url %></td>
+      
+      
+      <td><%= link_to 'Show', institution_path(biz) %></td>
+      <td><%= link_to 'Edit', edit_institution_path(biz) %></td>
+      <td><%= link_to 'Delete', institution_path(biz), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+</tr>
+<%i +=1 %>
+<% end %>
+</table>

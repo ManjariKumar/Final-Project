@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @location = Institution.find_by_inst_id(@lesson.institution_id)
   end
 
   def new

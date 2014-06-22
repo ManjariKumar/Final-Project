@@ -97,3 +97,40 @@ Lesson.create [
     institution_id: "92y_ues"
 
   }]
+
+
+  puts "Adding a Whole bunch of institutions"
+Institution.create [
+  { inst_id:"92y_ues",
+    inst_name: "92nd Street Y",
+    inst_add1: "1395 Lexington Avenue",
+    inst_add2: "",
+    inst_city:"New York",
+    inst_state:"State",
+    inst_zip: 10128,
+    inst_url: "http://www.92y.org/",
+    inst_phone:"212.415.5500"
+
+  },
+  { inst_id:"Asp_Grn",
+    inst_name: "Asphalt Green",
+    inst_add1: "555 East 90th Street",
+    inst_add2: "",
+    inst_city:"New York",
+    inst_state:"State",
+    inst_zip: 10128,
+    inst_url: "http://www.asphaltgreen.org/",
+    inst_phone:"212.369.8890"
+
+  },
+  { inst_id:"Nyc_Elt",
+    inst_name: "Nyc Elite Gymnastics",
+    inst_add1: "421 East 91st Street",
+    inst_add2: "",
+    inst_city:"New York",
+    inst_state:"State",
+    inst_zip: 10128,
+    inst_url: "http://nycelite.com/",
+    inst_phone:"212.289.8737"
+
+  }]

@@ -23,3 +23,26 @@
 <%= link_to 'Back', lessons_path %>
 <%= link_to 'Edit', edit_lesson_path(@lesson) %>
 <%= link_to 'Delete', lesson_path(@lesson), method: :delete, data: {confirm: 'Are you sure ?'} %>
+
+
+<h2> Class Location: </h2>
+
+<p>
+<strong> Institution: </strong>
+<%= @location.inst_id %>
+</p>
+
+<p>
+<strong> Address: </strong>
+<%= @location.inst_add1 %>, <%= @location.inst_city %>, <%= @location.inst_state %>, <%= @location.inst_zip %>
+</p>
+
+<p>
+<strong> Phone: </strong>
+<%= @location.inst_phone %>
+</p>
+
+<p>
+<strong> Website: </strong>
+<%= @location.inst_url %>
+</p>
