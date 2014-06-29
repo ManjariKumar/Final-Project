@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'geocoder'
+# converts address to lattitude and longitude
+gem 'cancan'
+# gem for user authorization
 gem 'devise'
 # gem for user authentication
 gem 'pry-rails'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622184633) do
+ActiveRecord::Schema.define(version: 20140628190746) do
 
   create_table "institutions", force: true do |t|
     t.string   "inst_id"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20140622184633) do
     t.string   "inst_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   create_table "lessons", force: true do |t|
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140622184633) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

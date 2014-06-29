@@ -1,5 +1,7 @@
 class LessonsController < ApplicationController
-  
+
+load_and_authorize_resource
+
 before_action :authenticate_user!
 
   def index
@@ -12,7 +14,9 @@ before_action :authenticate_user!
   end
 
   def new
-    @lesson = Lesson.new
+    if can? :create, @lesson
+      @lesson = Lesson.new
+    end
   end
 
   def create
@@ -27,6 +31,7 @@ before_action :authenticate_user!
 
   def edit
     @lesson = Lesson.find(params[:id])
+    authorize! if can? :update, @lesson
   end
 
   def update

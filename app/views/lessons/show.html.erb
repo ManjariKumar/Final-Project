@@ -21,20 +21,25 @@
 </p>
 
 <%= link_to 'Back', lessons_path %>
-<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+<% if can? :update, @lesson %>
+  <%= link_to 'Edit', edit_lesson_path(@lesson) %>
+<%end%>
+
+<% if can? :delete, @lesson %>
 <%= link_to 'Delete', lesson_path(@lesson), method: :delete, data: {confirm: 'Are you sure ?'} %>
+<%end%>
 
 
 <h2> Class Location: </h2>
 
 <p>
 <strong> Institution: </strong>
-<%= @location.inst_id %>
+<%= @location.inst_name %>
 </p>
 
 <p>
 <strong> Address: </strong>
-<%= @location.inst_add1 %>, <%= @location.inst_city %>, <%= @location.inst_state %>, <%= @location.inst_zip %>
+<%= @location.inst_add1 %>, <%= @location.inst_city %>, <%= @location.inst_state %>, <%= @location.inst_zip %>, <%= @location.latitude %>, <%= @location.longitude %>
 </p>
 
 <p>
@@ -44,5 +49,43 @@
 
 <p>
 <strong> Website: </strong>
-<%= @location.inst_url %>
+<%= link_to @location.inst_url, @location.inst_url %>
 </p>
+
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
+</script>
+
+<script>
+
+var latitude = <%= @location.latitude %>
+var longitude = <%= @location.longitude %>
+
+function initialize()
+{
+  var myLatLng = new google.maps.LatLng(latitude, longitude);
+  var mapProp = {
+    center:new google.maps.LatLng(latitude, longitude),
+    zoom:16,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+  var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map});
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+<!-- <body> -->
+<div id="googleMap" style="width:500px;height:380px;"></div>
+
+<!-- </body> -->
+
+
+
+

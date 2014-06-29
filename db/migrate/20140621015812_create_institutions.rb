@@ -14,4 +14,8 @@ class CreateInstitutions < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def add_column
+  end
+  
 end
