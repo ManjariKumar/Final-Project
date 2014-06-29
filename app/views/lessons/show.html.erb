@@ -53,6 +53,13 @@
 </p>
 
 
+<h3>Nearby locations</h3>
+<ul> 
+<% for location in @location.nearbys(1) %> 
+<li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
+<%end%>
+</ul>
+
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
 </script>
 
@@ -63,6 +70,7 @@ var longitude = <%= @location.longitude %>
 
 function initialize()
 {
+  var image = 'images/map-marker.png';
   var myLatLng = new google.maps.LatLng(latitude, longitude);
   var mapProp = {
     center:new google.maps.LatLng(latitude, longitude),
@@ -74,7 +82,10 @@ function initialize()
 
   var marker = new google.maps.Marker({
       position: myLatlng,
-      map: map});
+      map: map,
+  	  icon: 'map-marker.png'});
+
+  marker.setMap(map);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -85,7 +96,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="googleMap" style="width:500px;height:380px;"></div>
 
 <!-- </body> -->
-
 
 
 
