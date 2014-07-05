@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'oauth'
 gem 'geocoder'
 # converts address to lattitude and longitude
 gem 'cancan'
@@ -31,7 +32,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
 gem 'nokogiri'
+# to scrape classes from the web
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
