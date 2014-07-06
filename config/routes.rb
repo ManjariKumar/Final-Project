@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :lessons
   end
 
+root 'lessons#index'
   post 'signup' => 'devise/registrations#create', :as => :custom_user_registration
   get 'institutions/index'
 

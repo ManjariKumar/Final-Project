@@ -1,5 +1,7 @@
 <h2> Details of selected class: </h2>
 
+
+<div class="class-details">
 <p>
 <strong> Class Name: </strong>
 <%= @lesson.name %>
@@ -14,6 +16,8 @@
 <strong> Weekday: </strong>
 <%= @lesson.weekday %>
 </p>
+
+</div>
 
 <p>
 <strong> Ages: </strong>
@@ -31,6 +35,7 @@
 
 
 <h2> Class Location: </h2>
+<h3>neighborhood</h3><%#=access_token.neighborhood%>
 
 <p>
 <strong> Institution: </strong>
@@ -53,31 +58,21 @@
 </p>
 
 
+<h3>Nearby locations</h3>
+<ul> 
+<% for location in @location.nearbys(1) %> 
+<li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
+<%end%>
+</ul>
+
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
 </script>
 
 <script>
+  var latitude = <%= @location.latitude %>
+  var longitude = <%= @location.longitude %>
 
-var latitude = <%= @location.latitude %>
-var longitude = <%= @location.longitude %>
-
-function initialize()
-{
-  var myLatLng = new google.maps.LatLng(latitude, longitude);
-  var mapProp = {
-    center:new google.maps.LatLng(latitude, longitude),
-    zoom:16,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-};
-  var map=new google.maps.Map(document.getElementById("googleMap")
-  ,mapProp);
-
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map});
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize(latitude, longitude));
 </script>
 
 
@@ -85,7 +80,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="googleMap" style="width:500px;height:380px;"></div>
 
 <!-- </body> -->
-
 
 
 
