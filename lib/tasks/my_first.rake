@@ -13,8 +13,16 @@ class Scraper
 binding.pry
 
 		# doc.css("h1.module").text
+<<<<<<< HEAD
 
 		# Location.new  	
+=======
+		# Location.new  	
+
+		@lesson = Lesson.new
+		@lesson.name = doc.css("h1").text
+		@lesson.save
+>>>>>>> scraper
 	end
 end
 
