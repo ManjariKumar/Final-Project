@@ -2,20 +2,62 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-<<<<<<< HEAD
-.class-details{
-	background-color: pink;
+#classDetails{
 	font-family: helvetica;
-	border: 1px solid blue;
+	color: #8E44AD;
+	text-align: left;
+	margin: 10px;
+}
+
+.class-details{
+	width:500px;
+	background-color: #ECF0F1;
+	font-family: helvetica;
+	border: 1px solid grey;
+	margin: 10px;
+	padding: 10px;
+	text-align: left;
+	color: #8E44AD;
 
 }
 
-=======
-
-.class_details {
-	border: 2px solid black;
-	margin: 0 auto;
-	text-align: center;
-	color: red;
+#classLoc{
+	font-family: helvetica;
+	color: #8E44AD;
+	text-align: left;
+	margin: 10px;
 }
->>>>>>> scraper
+
+.location-details{
+	width:500px;
+	background-color: #ECF0F1;
+	font-family: helvetica;
+	border: 1px solid grey;
+	margin: 10px;
+	padding: 10px;
+	text-align: left;
+	color: #8E44AD;
+}
+
+#nearbyLocs{
+	font-family: helvetica;
+	color: #8E44AD;
+	text-align: left;
+	margin: 10px;
+}
+
+.nearby-locations{
+	width:500px;
+	background-color: #ECF0F1;
+	font-family: helvetica;
+	border: 1px solid grey;
+	margin: 10px;
+	padding: 10px;
+	text-align: left;
+	color: #8E44AD;
+}
+
+#googleMap{
+	margin: 10px;
+
+}

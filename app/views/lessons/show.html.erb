@@ -1,11 +1,7 @@
-<h2> Details of selected class: </h2>
+<h2 id="classDetails"> Details of selected class: </h2>
 
 
-<<<<<<< HEAD
 <div class="class-details">
-=======
-<div class="class_details">
->>>>>>> scraper
 <p>
 <strong> Class Name: </strong>
 <%= @lesson.name %>
@@ -21,12 +17,14 @@
 <%= @lesson.weekday %>
 </p>
 
-</div>
-
 <p>
 <strong> Ages: </strong>
 <%= @lesson.min_age%> to <%= @lesson.max_age%> years
 </p>
+
+</div>
+
+
 
 <%= link_to 'Back', lessons_path %>
 <% if can? :update, @lesson %>
@@ -38,12 +36,9 @@
 <%end%>
 
 
-<h2> Class Location: </h2>
-<<<<<<< HEAD
-<h3>neighborhood</h3><%#=access_token.neighborhood%>
-=======
-<h3>neighborhood</h3><%=@yelp_return%>
->>>>>>> scraper
+<h2 id="classLoc"> Class Location: </h2>
+
+<div class="location-details">
 
 <p>
 <strong> Institution: </strong>
@@ -52,7 +47,11 @@
 
 <p>
 <strong> Address: </strong>
-<%= @location.inst_add1 %>, <%= @location.inst_city %>, <%= @location.inst_state %>, <%= @location.inst_zip %>, <%= @location.latitude %>, <%= @location.longitude %>
+<%= @location.inst_add1 %>, <%= @location.inst_city %>, <%= @location.inst_state %>, <%= @location.inst_zip %>
+</p>
+
+<p>
+<%= @location.latitude %>, <%= @location.longitude %>
 </p>
 
 <p>
@@ -64,14 +63,16 @@
 <strong> Website: </strong>
 <%= link_to @location.inst_url, @location.inst_url %>
 </p>
+</div>
 
-
-<h3>Nearby locations</h3>
+<h3 id= "nearbyLocs">Nearby locations</h3>
+<div class="nearby-locations">
 <ul> 
 <% for location in @location.nearbys(1) %> 
 <li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
 <%end%>
 </ul>
+</div>
 
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
 </script>
@@ -85,7 +86,7 @@
 
 
 <!-- <body> -->
-<div id="googleMap" style="width:500px;height:380px;"></div>
+<div id="googleMap" style="width:522px;height:380px;"></div>
 
 <!-- </body> -->
 
