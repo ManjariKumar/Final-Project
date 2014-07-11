@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
 
-# load_and_authorize_resource
+load_and_authorize_resource
 
 before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
@@ -15,9 +15,8 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
   end
 
   def new
-    if (current_user.role == "admin" || current_user.role == "owner")
+    if can? :create, @lesson
       @lesson = Lesson.new
-      
     end
   end
 
@@ -33,10 +32,10 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
   end
 
   def edit
-    (current_user.role == "admin" || current_user.role == "owner")
-    # if can? :update, @lesson
-    @lesson = Lesson.find(params[:id])
-    # end
+  
+    if can? :update, @lesson
+      @lesson = Lesson.find(params[:id])
+    end
   end
 
   def update

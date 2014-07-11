@@ -15,8 +15,11 @@ class Ability
         can :read, :all
         can :create, Lesson
         can :update, Lesson do |lesson|
-          (lesson && lesson.owner == user.id) || user.role == "admin"
-        end
+          (lesson && lesson.owner == user.id)
+          end
+        can :destroy, Lesson do |lesson|
+          (lesson && lesson.owner == user.id)
+          end
       else
           can :read, :all
       end

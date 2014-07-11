@@ -6,8 +6,6 @@ gem 'geocoder'
 # converts address to lattitude and longitude
 gem 'cancan'
 # gem for user authorization
-gem 'cancancan', '~> 1.8'
-#work around for cancan to be compatible with strong params
 gem 'devise'
 # gem for user authentication
 gem 'pry-rails'
