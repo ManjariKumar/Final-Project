@@ -6,4 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    # ROLES = %w[admin moderator author banned]
+
+  def authorized?
+  # @user = User.find_by(id: current_user)
+    if (current_user.role == "admin" || current_user.role == "owner")
+    end
+ end
+
 end

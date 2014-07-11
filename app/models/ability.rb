@@ -10,6 +10,13 @@ class Ability
 
       if user.role == 'admin'
         can :manage, :all
+      elsif
+        user.role == 'owner'
+        can :read, :all
+        can :create, Lesson
+        can :update, Lesson do |lesson|
+          (lesson && lesson.owner == user.id) || user.role == "admin"
+        end
       else
           can :read, :all
       end

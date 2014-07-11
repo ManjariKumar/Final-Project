@@ -1,11 +1,12 @@
 class LessonsController < ApplicationController
 
-load_and_authorize_resource
+# load_and_authorize_resource
 
-before_action :authenticate_user!
+before_action :authenticate_user!, only: [:new, :create, :update, :delete]
+
 
   def index
-    @lessons = Lesson.all
+    @lessons = params[:q] ? Lesson.search_for(params[:q]) : Lesson.all
   end
 
   def show
@@ -14,13 +15,15 @@ before_action :authenticate_user!
   end
 
   def new
-    if can? :create, @lesson
+    if (current_user.role == "admin" || current_user.role == "owner")
       @lesson = Lesson.new
+      
     end
   end
 
   def create
     @lesson = Lesson.new(lesson_params)
+    # @lesson.owner = current_user
     if 
       @lesson.save
       redirect_to @lesson
@@ -30,8 +33,10 @@ before_action :authenticate_user!
   end
 
   def edit
+    (current_user.role == "admin" || current_user.role == "owner")
+    # if can? :update, @lesson
     @lesson = Lesson.find(params[:id])
-    authorize! if can? :update, @lesson
+    # end
   end
 
   def update
@@ -49,6 +54,8 @@ before_action :authenticate_user!
     @lesson.destroy
     redirect_to lessons_path
   end
+
+  
 
 private
 def lesson_params
