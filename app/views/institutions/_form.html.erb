@@ -1,0 +1,55 @@
+
+<%= form_for(@institution) do |f| %>
+	<% if @institution.errors.any? %>
+		<div id="error explanation">
+		 <h2> <%= pluralize(@institution.errors.count, "error")%> prevented this institution from being saved </h2>
+
+		 <ul>
+			 <% @institution.errors.full_messages.each do |msg| %>
+			   <li><%= msg %></li>
+			 <%end%>
+		 </ul>
+		</div>
+	<%end%>
+
+	<p>
+     	<%= f.label "Institution Name" %><br>
+	  	<%= f.text_field :inst_name %><br>
+    </p>
+
+    <p>
+     	<%= f.label "Address Line 1"%><br>
+	  	<%= f.text_field :inst_add1  %><br>
+    </p>
+
+     <p>
+     	<%= f.label "Address Line 2" %><br>
+	  	<%= f.text_field :inst_add2 %><br>
+    </p>
+
+     <p>
+     	<%= f.label "City" %><br>
+	  	<%= f.text_field :inst_city %><br>
+    </p>
+
+     <p>
+     	<%= f.label "State" %><br>
+	  	<%= f.text_field :inst_state%><br>
+    </p>
+
+    <p>
+     	<%= f.label "Zip" %><br>
+	  	<%= f.text_field :inst_zip%><br>
+    </p>
+
+	<p>
+     	<%= f.label "Website" %><br>
+	  	<%= f.text_field :inst_url%><br>
+    </p>
+
+<%= f.submit %>
+<%end%>
+
+
+
+

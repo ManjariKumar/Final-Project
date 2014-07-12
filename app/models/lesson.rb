@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
 	belongs_to :institution
+	belongs_to :user
 	validates :name, presence: true, length: { minimum: 5}
 
 	def self.search_for(query)

@@ -22,7 +22,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
   def create
     @lesson = Lesson.new(lesson_params)
-    # @lesson.owner = current_user
+    # @lesson.owner = current_user.id
     if 
       @lesson.save
       redirect_to @lesson
@@ -58,7 +58,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
 private
 def lesson_params
-params.require(:lesson).permit(:name, :description, :min_age, :max_age, :weekday)
+params.require(:lesson).permit(:name, :description, :min_age, :max_age, :weekday, :category)
 end
 
 end

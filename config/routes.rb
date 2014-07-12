@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
+  resources :users
   resources :lessons
+  resources :users, only: :show
 
   resources :institutions
   resources :institutions do

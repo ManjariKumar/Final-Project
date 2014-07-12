@@ -1,5 +1,4 @@
-<h1>Institutions#show</h1>
-<p>Find me in app/views/institutions/show.html.erb</p>
+<h1>Institutions Details</h1>
 
 <p>
 <strong> Institution Name: </strong>
@@ -13,5 +12,5 @@
 
 <p>
 <strong> Website: </strong>
-<%= @institution.inst_url %>
+<%= link_to @institution.inst_url, @institution.inst_url %>
 </p>

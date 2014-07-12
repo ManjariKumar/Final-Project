@@ -1,8 +1,4 @@
-<h1>Institutions#index</h1>
-<p>Find me in app/views/institutions/index.html.erb</p>
-
-
-
+<h1>List of Institutions</h1>
 
 <table >
 <tr>
@@ -24,8 +20,12 @@
       
       
       <td><%= link_to 'Show', institution_path(biz) %></td>
+      <% if can? :update, @institution%>
       <td><%= link_to 'Edit', edit_institution_path(biz) %></td>
+      <%end%>
+      <% if can? :destroy, @institution%>
       <td><%= link_to 'Delete', institution_path(biz), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
+      <%end%>
 </tr>
 <%i +=1 %>
 <% end %>

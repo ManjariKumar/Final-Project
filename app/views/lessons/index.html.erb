@@ -1,5 +1,9 @@
 <h1>Welcome to Class Act</h1>
 
+<% if user_signed_in? %>
+  <h3><%= link_to "My Class Listings", user_path(current_user) %></h3>
+  
+<% end %>
 
 <%= form_tag '/', method: :get do %>
   <%= search_field_tag :q, params[:q] %>
@@ -27,9 +31,7 @@
       <td><%= lesson.min_age %> to </td>
       <td><%= lesson.max_age %></td>
       <td><%= link_to 'More details', lesson_path(lesson) %></td>
-      <% if can? :update, @lesson%>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-      <%end%>
+      
 
       <% if can? :destroy, @lesson%>
         <td><%= link_to 'Delete', lesson_path(lesson), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
