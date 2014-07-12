@@ -26,12 +26,12 @@
       <td><%= lesson.weekday %></td>
       <td><%= lesson.min_age %> to </td>
       <td><%= lesson.max_age %></td>
-      <td><%= link_to 'Show', lesson_path(lesson) %></td>
+      <td><%= link_to 'More details', lesson_path(lesson) %></td>
       <% if can? :update, @lesson%>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
       <%end%>
 
-      <% if can? :delete, @lesson%>
+      <% if can? :destroy, @lesson%>
         <td><%= link_to 'Delete', lesson_path(lesson), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
       <%end%>
 </tr>

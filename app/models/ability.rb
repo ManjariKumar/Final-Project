@@ -13,7 +13,7 @@ class Ability
       elsif
         user.role == 'owner'
         can :read, :all
-        can :create, Lesson
+        can :create, @lesson
         can :update, Lesson do |lesson|
           (lesson && lesson.owner == user.id)
           end
