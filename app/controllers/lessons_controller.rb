@@ -6,7 +6,18 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
 
   def index
-    @lessons = params[:q] ? Lesson.search_for(params[:q]) : Lesson.all
+    
+    @lessons = if params[:q] && params[:my_lessons]
+      Lesson.my_lessons(current_user.id).search_for(params[:q])
+    elsif params[:q]
+      Lesson.search_for(params[:q])
+    elsif params[:my_lesson]
+      Lesson.my_lessons(current_user.id)
+    else
+      Lesson.all
+    end
+
+    # @lessons = params[:q] ? Lesson.search_for(params[:q]) : Lesson.all
   end
 
   def show
