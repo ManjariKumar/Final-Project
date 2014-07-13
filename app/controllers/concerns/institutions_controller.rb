@@ -1,1 +1,0 @@
-institutions_controller.rb

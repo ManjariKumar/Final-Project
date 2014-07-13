@@ -1,7 +1,7 @@
 class InstitutionsController < ApplicationController
 
   def index
-  @institutions = Institution.all
+    @institutions = Institution.all
   end
 
   def show
