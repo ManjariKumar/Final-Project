@@ -1,17 +1,20 @@
 <h1>List of All Institutions</h1>
 
-<table >
-<tr>
-  	<th>S.No.</th>
-    <th>Institution Name</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Website</th>
-  </tr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+  	  <th>S.No.</th>
+      <th>Institution Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+    </tr>
+  </thead>
 
 <% i=1 %>
 <% @institutions.each do |biz| %>
-<tr>
+  <tbody>
+    <tr>
       <td><%= i %></td>	
       <td><%= biz.inst_name %></td>
       <td><%= biz.inst_add1%>, <%= biz.inst_add2%>, <%= biz.inst_city%>, <%= biz.inst_state%>, <%= biz.inst_zip%></td>
@@ -26,7 +29,8 @@
       <% if can? :destroy, @institution%>
       <td><%= link_to 'Delete', institution_path(biz), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
       <%end%>
-</tr>
+    </tr>
+  </tbody>
 <%i +=1 %>
 <% end %>
 </table>
