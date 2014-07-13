@@ -1,10 +1,5 @@
 <h1>Welcome to Class Act</h1>
 
-<% if user_signed_in? %>
-  <h3><%= link_to "My Class Listings", user_path(current_user) %></h3>
-  
-<% end %>
-
 <%= form_tag '/', method: :get do %>
   <%= search_field_tag :q, params[:q] %>
   <%= submit_tag "Search" %>
@@ -48,3 +43,11 @@
   
   <h3><%= link_to "Add a New Class", new_lesson_path %></h3>
 <% end %>
+
+<% if (user_signed_in?) && (can? :manage, @user) %>
+  
+  <h3><%= link_to "See list of Institutions", institutions_path %></h3>
+   <h3><%= link_to "See list of Users", users_path %></h3>
+<% end %>
+
+<h3><%= link_to "Home", lessons_path %></h3>
