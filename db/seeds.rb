@@ -13,7 +13,9 @@ Lesson.create [
     weekday: "tuesday",
     min_age:4,
     max_age:6,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
 
   },
 { lesson_id:"Ballet_Bas",
@@ -22,7 +24,9 @@ Lesson.create [
     weekday: "tuesday",
     min_age:7,
     max_age:9,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
 
   },
   { lesson_id:"Ballet_Adv",
@@ -31,7 +35,9 @@ Lesson.create [
     weekday: "Tuesday",
     min_age:4,
     max_age:6,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
 
   },
 { lesson_id:"Swimming_Bas",
@@ -40,7 +46,9 @@ Lesson.create [
     weekday: "Wednesday",
     min_age:3,
     max_age:4,
-    institution_id: "Asp_Grn"
+    institution_id: "Asp_Grn",
+    category: "sports, swim, swimming",
+    owner: 7
 
   },
   { lesson_id:"Swimming_Bas",
@@ -49,7 +57,9 @@ Lesson.create [
     weekday: "Friday",
     min_age:4,
     max_age:5,
-    institution_id: "Asp_Grn"
+    institution_id: "Asp_Grn",
+    category: "sports, swim, swimming",
+    owner: 7
 
   },
 { lesson_id:"Gym_Bas",
@@ -58,7 +68,9 @@ Lesson.create [
     weekday: "Monday",
     min_age:2,
     max_age:3,
-    institution_id: "Nyc_Elt"
+    institution_id: "Nyc_Elt",
+    category: "sports, gym, gymnastics",
+    owner: 5
 
   },
   { lesson_id:"Gymnastics_Itr",
@@ -67,7 +79,9 @@ Lesson.create [
     weekday: "tuesday",
     min_age:6,
     max_age:8,
-    institution_id: "Nyc_Elt"
+    institution_id: "Nyc_Elt",
+    category: "sports, gym, gymnastics",
+    owner: 5
 
   },
 { lesson_id:"Ballet_1",
@@ -76,7 +90,10 @@ Lesson.create [
     weekday: "tuesday",
     min_age:4,
     max_age:6,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
+
 
   },
   { lesson_id:"Ballet_1",
@@ -85,7 +102,9 @@ Lesson.create [
     weekday: "tuesday",
     min_age:4,
     max_age:6,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
 
   },
 { lesson_id:"Ballet_1",
@@ -94,7 +113,9 @@ Lesson.create [
     weekday: "tuesday",
     min_age:4,
     max_age:6,
-    institution_id: "92y_ues"
+    institution_id: "92y_ues",
+    category: "Dance, dancing",
+    owner: 3
 
   }]
 
