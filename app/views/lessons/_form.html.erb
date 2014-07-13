@@ -22,6 +22,11 @@
 	  	<%= f.text_field :description %><br>
     </p>
 
+	<p>
+     	<%= f.label "Category" %><br>
+	  	<%= f.text_field :category %><br>
+    </p>
+
      <p>
      	<%= f.label :weekday %><br>
 	  	<%= f.text_field :weekday %><br>
@@ -37,9 +42,11 @@
 	  	<%= f.text_field :max_age %><br>
     </p>
 
+    
+
 <%= f.submit %>
 <%end%>
 
 
-
+<h4><%= link_to 'Back', lessons_path%></h4>
 

@@ -22,7 +22,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
   def create
     @lesson = Lesson.new(lesson_params)
-    # @lesson.owner = current_user.id
+    @lesson.owner = current_user.id
     if 
       @lesson.save
       redirect_to @lesson

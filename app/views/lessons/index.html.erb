@@ -1,10 +1,5 @@
 <h1>Welcome to Class Act</h1>
 
-<% if user_signed_in? %>
-  <h3><%= link_to "My Class Listings", user_path(current_user) %></h3>
-  
-<% end %>
-
 <%= form_tag '/', method: :get do %>
   <%= search_field_tag :q, params[:q] %>
   <%= submit_tag "Search" %>
@@ -12,18 +7,21 @@
 
 <br/>
 
-<table >
-<tr>
-  	<th>S.No.</th>
-    <th>Class Name</th>
-    <th>Description</th>
-    <th>Weekday</th>
-    <th>Ages</th>
-  </tr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+  	  <th>S.No.</th>
+      <th>Class Name</th>
+      <th>Description</th>
+      <th>Weekday</th>
+      <th>Ages</th>
+    </tr>
+  </thead>
 
 <% i=1 %>
 <% @lessons.each do |lesson| %>
-<tr>
+  <tbody>
+    <tr>
       <td><%= i %></td>	
       <td><%= lesson.name %></td>
       <td><%= lesson.description %></td>
@@ -32,11 +30,15 @@
       <td><%= lesson.max_age %></td>
       <td><%= link_to 'More details', lesson_path(lesson) %></td>
       
+      <% if can? :update, @lesson%>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+      <%end%>
 
       <% if can? :destroy, @lesson%>
         <td><%= link_to 'Delete', lesson_path(lesson), method: :delete, data: {confirm: 'Are you sure ?'} %></td>
       <%end%>
-</tr>
+     </tr>
+  </tbody>
 <%i +=1 %>
 <% end %>
 </table>
@@ -45,3 +47,11 @@
   
   <h3><%= link_to "Add a New Class", new_lesson_path %></h3>
 <% end %>
+
+<% if (user_signed_in?) && (can? :manage, @user) %>
+  
+  <h3><%= link_to "See list of Institutions", institutions_path %></h3>
+   <h3><%= link_to "See list of Users", users_path %></h3>
+<% end %>
+
+<h3><%= link_to "Home", lessons_path %></h3>
