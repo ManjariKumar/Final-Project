@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(institution_params)
+    @user = User.new(user_params)
     if 
       @user.save
       redirect_to @user
@@ -39,13 +39,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(param[:id])
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:email, :role)
+    params.require(:user).permit(:email, :encrypted_password, :role)
   end
 end

@@ -37,7 +37,7 @@ class InstitutionsController < ApplicationController
   end
 
   def destroy
-    @institution = Institution.find(param[:id])
+    @institution = Institution.find(params[:id])
     @institution.destroy
     redirect_to institutions_path
   end
