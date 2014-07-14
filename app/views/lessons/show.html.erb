@@ -2,24 +2,29 @@
 
 
 <div class="class-details">
+
+<div id="classImage">
+  <%= image_tag @lesson.image %>
+</div>
+
 <p>
 <strong> Class Name: </strong>
-<%= @lesson.name %>
+  <%= @lesson.name %>
 </p>
 
 <p>
 <strong> Description: </strong>
-<%= @lesson.description %>
+  <%= @lesson.description %>
 </p>
 
 <p>
 <strong> Weekday: </strong>
-<%= @lesson.weekday %>
+  <%= @lesson.weekday %>
 </p>
 
 <p>
 <strong> Ages: </strong>
-<%= @lesson.min_age%> to <%= @lesson.max_age%> years
+  <%= @lesson.min_age%> to <%= @lesson.max_age%> years
 </p>
 
 </div>
@@ -65,15 +70,6 @@
 </p>
 </div>
 
-<h3 id= "nearbyLocs">Nearby locations</h3>
-<div class="nearby-locations">
-<ul> 
-<% for location in @location.nearbys(1) %> 
-<li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
-<%end%>
-</ul>
-</div>
-
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
 </script>
 
@@ -87,9 +83,21 @@
 
 
 <!-- <body> -->
-<div id="googleMap" style="width:522px;height:380px;"></div>
+<div id="googleMap" style="width:422px;height:280px;"></div>
 
 <!-- </body> -->
+
+
+<div class="nearby-locations">
+	<h3 id= "nearbyLocs">Nearby locations</h3>
+<ul> 
+<% for location in @location.nearbys(1) %> 
+<li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
+<%end%>
+</ul>
+</div>
+
+
 
 
 

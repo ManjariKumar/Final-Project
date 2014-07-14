@@ -15,18 +15,21 @@ Lesson.create [
     max_age:6,
     institution_id: "92y_ues",
     category: "Dance, dancing",
-    owner: 3
+    owner: 3,
+    image: "danchild_balletbasics.jpg"
 
   },
 { lesson_id:"Ballet_Bas",
     name: "Ballet Basics",
-    description: "foundational ballet lessons for 7-9 yr olds",
+    description: "foundational ballet lessons for teens",
     weekday: "tuesday",
-    min_age:7,
-    max_age:9,
+    min_age:12,
+    max_age:18,
     institution_id: "92y_ues",
     category: "Dance, dancing",
-    owner: 3
+    owner: 3,
+    image: "danteen_ballet_stretch_lg.jpg"
+
 
   },
   { lesson_id:"Ballet_Adv",
@@ -37,29 +40,44 @@ Lesson.create [
     max_age:6,
     institution_id: "92y_ues",
     category: "Dance, dancing",
-    owner: 3
+    owner: 3,
+    image: ""
 
   },
 { lesson_id:"Swimming_Bas",
+    name: "Water Babies",
+    description: "Basic introduction to water skills for babies",
+    weekday: "Wednesday",
+    min_age:1,
+    max_age:2,
+    institution_id: "Asp_Grn",
+    category: "sports, swim, swimming",
+    owner: 7,
+    image: "first_swim_asp_grn.jpg"
+
+  },
+  { lesson_id:"Swimming_Bas",
     name: "Water Tots",
-    description: "Basic introduction to water skills for 3-4 yr olds ",
+    description: "Basic introduction to water skills for toddlers",
     weekday: "Wednesday",
     min_age:3,
     max_age:4,
     institution_id: "Asp_Grn",
     category: "sports, swim, swimming",
-    owner: 7
+    owner: 3,
+    image: "swim_tots_asp_grn.jpg"
 
   },
-  { lesson_id:"Swimming_Bas",
-    name: "Water Sprites",
-    description: "Basic water skills for 4-5 yr olds",
+  { lesson_id:"Soccer_Bas",
+    name: "Junior Soccer",
+    description: "Basic soccer skills for 5-6 yr olds",
     weekday: "Friday",
-    min_age:4,
-    max_age:5,
+    min_age:5,
+    max_age:6,
     institution_id: "Asp_Grn",
-    category: "sports, swim, swimming",
-    owner: 7
+    category: "sports, soccer",
+    owner: 7,
+    image: "soccer_asp_grn.jpg"
 
   },
 { lesson_id:"Gym_Bas",
@@ -70,18 +88,58 @@ Lesson.create [
     max_age:3,
     institution_id: "Nyc_Elt",
     category: "sports, gym, gymnastics",
-    owner: 5
+    owner: 5,
+    image: "nyc_eg_soho_tumbl_tots"
 
   },
   { lesson_id:"Gymnastics_Itr",
     name: "Gym Stars",
-    description: "Intermediate gymnastics lessons for 6-8 yr olds",
+    description: "Intermediate gymnastics lessons for 5-9 yr olds",
     weekday: "tuesday",
-    min_age:6,
-    max_age:8,
+    min_age:5,
+    max_age:9,
     institution_id: "Nyc_Elt",
     category: "sports, gym, gymnastics",
-    owner: 5
+    owner: 5,
+    image: "nyc_eg_soho_adv.jpg"
+
+  },
+{ lesson_id:"Ballet_1",
+    name: "Pre Ballet Basics",
+    description: "Foundational ballet lessons for 4-6 yr olds",
+    weekday: "tuesday",
+    min_age:3,
+    max_age:4,
+    institution_id: "Bae_ues",
+    category: "Dance, dancing",
+    owner: 3,
+    image: "bae_preballet_resized2.jpg"
+
+
+  },
+  { lesson_id:"Iceskating_1",
+    name: "Junior Ice Skating",
+    description: "foundational ice skating lessons for 4-6 yr olds",
+    weekday: "tuesday",
+    min_age:4,
+    max_age:6,
+    institution_id: "Che_pie",
+    category: "Ice skating, sports",
+    owner: 3,
+    image: "skyrink_che_pie.jpg"
+
+  },
+
+  { lesson_id:"Iceskating_1",
+    name: "Preschool Ice Skating",
+    description: "foundational ice skating lessons for 2-3yr olds",
+    weekday: "tuesday",
+    min_age:2,
+    max_age:3,
+    institution_id: "Che_pie",
+    category: "Ice skating, sports",
+    owner: 3,
+    image: "IceSkating_che_pie_preschool.jpg"
 
   },
 { lesson_id:"Ballet_1",
@@ -92,30 +150,8 @@ Lesson.create [
     max_age:6,
     institution_id: "92y_ues",
     category: "Dance, dancing",
-    owner: 3
-
-
-  },
-  { lesson_id:"Ballet_1",
-    name: "Ballet Basics",
-    description: "foundational ballet lessons for 4-6 yr olds",
-    weekday: "tuesday",
-    min_age:4,
-    max_age:6,
-    institution_id: "92y_ues",
-    category: "Dance, dancing",
-    owner: 3
-
-  },
-{ lesson_id:"Ballet_1",
-    name: "Ballet Basics",
-    description: "foundational ballet lessons for 4-6 yr olds",
-    weekday: "tuesday",
-    min_age:4,
-    max_age:6,
-    institution_id: "92y_ues",
-    category: "Dance, dancing",
-    owner: 3
+    owner: 3,
+    image: ""
 
   }]
 
@@ -146,12 +182,34 @@ Institution.create [
   },
   { inst_id:"Nyc_Elt",
     inst_name: "Nyc Elite Gymnastics",
-    inst_add1: "421 East 91st Street",
+    inst_add1: "100 Avenue Of The Americas",
     inst_add2: "",
     inst_city:"New York",
     inst_state:"State",
-    inst_zip: 10128,
+    inst_zip: 10013,
     inst_url: "http://nycelite.com/",
-    inst_phone:"212.289.8737"
+    inst_phone:"212-334-3628"
+
+  },
+  { inst_id:"Nyc_Elt",
+    inst_name: "Nyc Elite Gymnastics",
+    inst_add1: "100 Avenue Of The Americas",
+    inst_add2: "",
+    inst_city:"New York",
+    inst_state:"State",
+    inst_zip: 10013,
+    inst_url: "http://nycelite.com/",
+    inst_phone:"212-334-3628"
+
+  },
+{ inst_id:"Che_pie",
+    inst_name: "Chelsea Piers",
+    inst_add1: "23rd Street & Hudson River Park",
+    inst_add2: "",
+    inst_city:"New York",
+    inst_state:"State",
+    inst_zip: 10011,
+    inst_url: "http://www.chelseapiers.com/",
+    inst_phone:"212.336.6666"
 
   }]
