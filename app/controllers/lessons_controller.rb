@@ -69,7 +69,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :delete]
 
 private
 def lesson_params
-params.require(:lesson).permit(:name, :description, :min_age, :max_age, :weekday, :category)
+params.require(:lesson).permit(:name, :description, :min_age, :max_age, :weekday, :category, :institution_id)
 end
 
 end
