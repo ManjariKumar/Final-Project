@@ -44,6 +44,6 @@ class InstitutionsController < ApplicationController
 
   private
   def institution_params
-    params.require(:institution).permit(:inst_name, :inst_add1, :inst_add2, :inst_city, :inst_state, :inst_zip, :inst_url, :inst_phone)
+    params.require(:institution).permit(:inst_name, :inst_id, :inst_add1, :inst_add2, :inst_city, :inst_state, :inst_zip, :inst_url, :inst_phone)
   end
 end
