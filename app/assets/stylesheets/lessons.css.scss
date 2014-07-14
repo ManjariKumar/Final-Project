@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#classImage{position: absolute;
+    right: 0px;
+    width: 500px;}
+
+#googleMap{
+	float: left;
+    width: 500px;}
+
+.nearby-locations{
+	float: right;
+    width: 500px;
+}
 
 #classDetails{
 	font-family: helvetica;
