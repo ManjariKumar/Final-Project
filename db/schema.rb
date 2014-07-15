@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714193528) do
+ActiveRecord::Schema.define(version: 20140715002711) do
 
   create_table "institutions", force: true do |t|
     t.string   "inst_id"
