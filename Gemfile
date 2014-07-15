@@ -4,6 +4,8 @@ ruby "2.1.1"
 gem 'oauth'
 gem 'geocoder'
 # converts address to lattitude and longitude
+gem 'gmaps4rails'
+# help with google maps api
 gem 'cancan'
 # gem for user authorization
 gem 'devise'
