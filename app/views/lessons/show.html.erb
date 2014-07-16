@@ -109,7 +109,7 @@
 <div class="nearby-locations">
 	<h3 id= "nearbyLocs">Nearby locations</h3>
 <ul> 
-<% for location in @location.nearbys(1) %> 
+<% for location in @location.nearbys(2) %> 
 <li><%= link_to location.inst_name, location %> (<%= location.distance.round(2) %> miles)</li>
 <%end%>
 </ul>
