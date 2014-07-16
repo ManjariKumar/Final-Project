@@ -73,15 +73,11 @@
 </p>
 </div>
 
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNeCgrw0Fwol8sCeU_kCa5_3qaZuWU-7M&sensor=false">
-</script>
+
 
 <script>
   var latitude = <%= @location.latitude %>
-  var longitude = <%= @location.longitude %>
-
-  google.maps.event.addDomListener(window, 'load', initialize(latitude, longitude));
-  
+  var longitude = <%= @location.longitude %>  
 </script>
 
 <div style='width: 522px;'>
@@ -99,7 +95,6 @@
         "image": "map-marker-red.png",
         "width":  36,
         "height": 36,
-        "zoom": 16
       },
       "infowindow": "hello!"
     }
